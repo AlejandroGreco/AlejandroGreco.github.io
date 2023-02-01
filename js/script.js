@@ -16,14 +16,14 @@ const resaltarBoton = "btn btn-primary btn-lg w-100";
 const atenuarBoton = "btn btn-light btn-lg w-100";
 
 /*Definimos las constantes para acceder por ID a la sección home*/
-const home = document.getElementById("home");
+const homePage = document.getElementById("homePage");
 const nombreHome = document.getElementById("nombreHome");
 const fotoHome = document.getElementById("fotoHome");
 const ocupacionHome = document.getElementById("ocupacionHome");
 
 /*Definimos las constantes para acceder por ID a la sección
 info y las distintas subsecciones que la conforman*/
-const info = document.getElementById("info");
+const infoPage = document.getElementById("infoPage");
 const resumen = document.getElementById("resumen");
 const acercaDeMi = document.getElementById("acercaDeMi");
 const experiencia = document.getElementById("experiencia");
@@ -123,31 +123,31 @@ function quitarElementos() {
       nombreHome.style.display = "none";
       fotoHome.style.display = "none";
       ocupacionHome.style.display = "none";
-      home.style.display = "none";
+      homePage.style.display = "none";
       break;
     case botonResumen:
       botonResumen.className = atenuarBoton;
       resumen.style.display = "none";
       acercaDeMi.style.display = "none";
-      info.style.display = "none";
+      infoPage.style.display = "none";
       break;
     case botonExperiencia:
       botonExperiencia.className = atenuarBoton;
       experiencia.style.display = "none";
       trabajos.style.display = "none";
-      info.style.display = "none";
+      infoPage.style.display = "none";
       break;
     case botonEducacion:
       botonEducacion.className = atenuarBoton;
       educacion.style.display = "none";
       estudios.style.display = "none";
-      info.style.display = "none";
+      infoPage.style.display = "none";
       break;
     case botonOtraInfo:
       botonOtraInfo.className = atenuarBoton;
       otraInfo1.style.display = "none";
       otraInfo2.style.display = "none";
-      info.style.display = "none";
+      infoPage.style.display = "none";
       break;
     case botonRandom:
       botonRandom.className = atenuarBoton;
@@ -155,7 +155,7 @@ function quitarElementos() {
       pruebaConcepto.style.display = "none";
       textoPruebaConcepto.style.display = "none";
       acercaDeMi.style.display = "none";
-      info.style.display = "none";
+      infoPage.style.display = "none";
       break;
     default:
       console.log('error: La variable "botonResaltado" no contiene un valor valido!');
@@ -171,7 +171,7 @@ function colocarElementos(botonClickeado) {
   switch (botonClickeado) {
     case botonHome:
       botonHome.className = resaltarBoton;
-      home.style.display = "block";
+      homePage.style.display = "block";
       nombreHome.style.display = "block";
       fotoHome.style.display = "block";
       ocupacionHome.style.display = "block";
@@ -179,35 +179,35 @@ function colocarElementos(botonClickeado) {
       break;
     case botonResumen:
       botonResumen.className = resaltarBoton;
-      info.style.display = "block";
+      infoPage.style.display = "block";
       resumen.style.display = "block";
       acercaDeMi.style.display = "block";
       botonResaltado = botonClickeado;
       break;
     case botonExperiencia:
       botonExperiencia.className = resaltarBoton;
-      info.style.display = "block";
+      infoPage.style.display = "block";
       experiencia.style.display = "block";
       trabajos.style.display = "block";
       botonResaltado = botonClickeado;
       break;
     case botonEducacion:
       botonEducacion.className = resaltarBoton;
-      info.style.display = "block";
+      infoPage.style.display = "block";
       educacion.style.display = "block";
       estudios.style.display = "block";
       botonResaltado = botonClickeado;
       break;
     case botonOtraInfo:
       botonOtraInfo.className = resaltarBoton;
-      info.style.display = "block";
+      infoPage.style.display = "block";
       otraInfo1.style.display = "block";
       otraInfo2.style.display = "block";
       botonResaltado = botonClickeado;
       break;
     case botonRandom:
       botonRandom.className = resaltarBoton;
-      info.style.display = "block";
+      infoPage.style.display = "block";
       resumen.style.display = "block";
       pruebaConcepto.style.display = "block";
       textoPruebaConcepto.style.display = "block";
@@ -227,7 +227,15 @@ según el origen que se le pase como parámetro.
 async function tomarInfo(origen) {
   await fetch(origen)
     .then(respuesta => respuesta.json())
-    .then(json => { const info = json.results[0];
+    .then(json => {
+      /********************************************************************
+      Definimos una constante para guardar la respuesta y usamos la consola
+      para corroborar la recepción por si hay problemas de conexión.
+      *********************************************************************/
+      const info = json.results[0];
+      console.log(info);
+
+      /*Guardamos los valores de las tag que necesitamos en distintas variables loacales*/
       let nombre = `${info.name.first} ${info.name.last}`;
       let direccion = `${info.location.street.name} ${info.location.street.number}`;
       let ubicacion = `${info.location.city}, ${info.location.state}, ${info.location.country} (C.P. ${info.location.postcode})`;

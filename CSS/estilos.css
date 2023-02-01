@@ -17,12 +17,12 @@ A continuación definimos los elemetos HTML que se mostraran al inicio
 y cuales se esconderan para luego ser modificados por JavaScript.
 ********************************************************************/
 
-#nombreHome, #home,
+#nombreHome, #homePage,
 #fotoHome, #ocupacionHome {
     display: block;
 }
 
-#info, #resumen, #acercaDeMi, #experiencia,
+#infoPage, #resumen, #acercaDeMi, #experiencia,
 #educacion, #otraInfo1, #trabajos,
 #estudios, #otraInfo2, #pruebaConcepto,
 #textoPruebaConcepto {
