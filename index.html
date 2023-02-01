@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final - Primeros pasos del desarrollo frontend - Academia Ticmas</title>
+    <!--Hoja de estilos de Boostrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--Hoja de estilos propia-->
+    <link rel="stylesheet" type="text/css" href="CSS\estilos.css" />
+    <!--Favicons credados en favicon.io-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <!--Fuente de Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Barra de navegación por medio de botones-->
+    <nav class="container text-center">
+        <div class="row">
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonHome" type="button" class="btn btn-primary btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                    Home
+                </button>
+            </div>
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonResumen" type="button" class="btn btn-light btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                    </svg>
+                    Resumen
+                </button>
+            </div>
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonExperiencia" type="button" class="btn btn-light btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Experiencia
+                </button>
+            </div>
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonEducacion" type="button" class="btn btn-light btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                        <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                    </svg>
+                    Educación
+                </button>
+            </div>
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonOtraInfo" type="button" class="btn btn-light btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                    </svg>
+                    Otra Info
+                </button>
+            </div>
+            <div class="col-lg-2 col-sm-4">
+                <button id="botonRandom" type="button" class="btn btn-light btn-lg w-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                    </svg>
+                    Random!
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!--Los títulos a continuación se mostraran según la sección-->
+    <header class="container">
+        <div class="row">
+            <h1 id="nombreHome" class="display-1 text-center"></h1>
+            <h1 id="resumen" class="fondo-gris-claro">Resumen</h1>
+            <h1 id="experiencia" class="fondo-gris-claro">Experiencia</h1>
+            <h1 id="educacion" class="fondo-gris-claro">Educación</h1>
+            <h1 id="otraInfo1" class="fondo-gris-claro">Otra Información</h1>
+        </div>
+    </header>
+    <!--La siguiente sección se mostrará al inicio y al cliquear en el botón de navegación "Home"-->
+    <section id="home" class="container">
+        <div class="row">
+            <img id="fotoHome" class="img-thumbnail mx-auto w-50" src="imagenes/defualt.jpg" alt="No se ha podido cargar la imagen."/>
+        </div>
+        <div class="row">
+            <h2 id="ocupacionHome" class="display-2 text-center">Ingeniero en Sistemas y Desarrollador Web</h2>
+        </div>
+    </section>
+    <!--Esta otra sección se mostrará al cliquear de los botones de navegación (excepto "Home")-->
+    <section id="info" class="container">
+        <div class="row">
+            <aside class="col-md-4 fondo-gris-claro">
+                <!--El siguiente contenedor se mostrará al cliquear en "Resumen"-->
+                <div class="container">
+                    <div class="row">
+                        <h2>Detalles Profesionales</h2>
+                    </div>
+                    <div class="row">
+                        <img id="fotoDP" class="img-thumbnail mx-auto w-100" src="imagenes/defualt.jpg" alt="No se ha podido cargar la imagen."/>
+                    </div>
+                    <div class="row"><br></div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Nombre</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p class="fs-6" id="nombreDP"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Edad</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p id="edadDP" class="fs-6"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Ubicación</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p class="fs-6" id="ubicacionDP"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Experiencia</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p class="fs-6" id="experienciaDP"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Nivel</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p class="fs-6">Universitario</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Grado</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <p class="fs-6">Master</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Teléfono</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a class="fs-6" id="telefonoDP"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Celular</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a class="fs-6" id="celularDP"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>E-mail</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a class="fuente-pequenia" id="emailDP"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <h6>Sitio Web</h6>
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <a class="fs-6" href="ejemplo.com">ejemplo.com</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <article class="col-md-8 fondo-gris-claro">
+                <div id="acercaDeMi" class="container fondo-gris-claro">
+                    <div id="pruebaConcepto" class="row">
+                        <h2 class="text-start">Prueba de Concepto</h2>
+                    </div>
+                    <div id="textoPruebaConcepto" class="row">
+                        <p class="text-start">
+                            Esto es una prueba de concepto de como cambiar los datos de la persona utilizando <span><a href="https://randomuser.me">https://randomuser.me</a></span>. Esa es la razón por la que hemos dado en llamar a esta sección "Random!".
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="text-start">Acerca de mí</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Nombre</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p class="fs-6" id="nombreAdm"></p>
+                        </div>
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Edad</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p id="edadAdm" class="fs-6"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Ubicación</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p class="fs-6" id="ubicacionAdm"></p>
+                        </div>
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Experiencia</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p class="fs-6" id="experienciaAdm"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Nivel</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p class="fs-6">Universitario</p>
+                        </div>
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Grado</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <p class="fs-6">Master</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Teléfono</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <a class="fs-6" id="telefonoAdm"></a>
+                        </div>
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Celular</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <a class="fs-6" id="celularAdm"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>E-mail</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <a class="fuente-pequenia" id="emailAdm"></a>
+                        </div>
+                        <div class="col-lg-2 col-sm-4">
+                            <h6>Sitio Web</h6>
+                        </div>
+                        <div class="col-lg-4 col-sm-8">
+                            <a class="fs-6" href="ejemplo.com">ejemplo.com</a>
+                        </div>
+                    </div>
+                    <div class="row"><br></div>
+                    <div class="row">
+                        <h2 class="text-start">Diseñador Web</h2>
+                    </div>
+                    <div class="row">
+                        <p class="text-start">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum. Nam ac neque tristique, tincidunt nisl nec, consectetur sem. Sed placerat lorem urna, sit amet ullamcorper ligula commodo a. Donec aliquet arcu a felis dapibus cursus. Sed commodo efficitur nunc semper rutrum. Aenean a dui nisl. Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus. Aenean iaculis eros nisl, sit amet faucibus leo placerat ac. Maecenas volutpat nibh vitae enim volutpat, id bibendum nulla viverra. Curabitur libero sapien, mattis id neque sit amet, volutpat pharetra sem. Vivamus eleifend erat pellentesque neque aliquet, ac mollis tellus molestie. Ut semper purus magna, sit amet ullamcorper justo pharetra eget. Morbi pulvinar egestas pharetra. Vivamus laoreet est magna, vel suscipit augue condimentum a. Sed interdum tortor eget neque scelerisque, et rhoncus dui varius.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <h2 class="text-start">Desarrollador de Aplicaciones Web</h2>
+                    </div>
+                    <div class="row">
+                        <p class="text-start">
+                            Nunc nec lorem in velit faucibus vehicula. Donec elit dolor, sollicitudin a justo vitae, suscipit eleifend turpis. Curabitur molestie fringilla lobortis. Cras sed consectetur ex, vitae accumsan dui. Donec pellentesque urna ac fermentum malesuada. Cras imperdiet turpis justo, et semper neque laoreet non. Etiam lorem orci, volutpat euismod felis a, feugiat vestibulum augue. Curabitur leo est, ultricies vel facilisis ut, venenatis ut ex. Nunc tincidunt tortor vel dolor facilisis aliquam. Etiam magna risus, pharetra in sapien in, consequat egestas eros. Etiam porta facilisis justo, venenatis porttitor nibh porttitor eu. Sed ultricies vulputate eros, ac pellentesque diam vulputate quis. Aenean turpis velit, lobortis ut mi quis, convallis faucibus orci. 
+                        </p>
+                    </div>
+                </div>
+
+                <!--El siguiente contenedor se mostrará al cliquear en "Experiencia"-->
+                <div id="trabajos" class="container fondo-gris-claro">
+                    <div class="row">
+                        <h2 class="text-start">Experiencia Laboral</h2>
+                    </div>
+                    <ul class="row">
+                        <li><h6 class="text-start">01-2020 / Actualidad - EmpresaA LTD.</h6>
+                            <ul>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum. Nam ac neque tristique, tincidunt nisl nec, consectetur sem.</li>
+                                <li>Sed placerat lorem urna, sit amet ullamcorper ligula commodo a. Donec aliquet arcu a felis dapibus cursus. Sed commodo efficitur nunc semper rutrum. Aenean a dui nisl.</li>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus. Aenean iaculis eros nisl, sit amet faucibus leo placerat ac.</li>
+                            </ul>
+                        </li>
+                        <li><h6 class="text-start">01-2018 / 12-2019 - EmpresaB LTD.</h6>
+                            <ul>
+                                <li>Maecenas volutpat nibh vitae enim volutpat, id bibendum nulla viverra. Curabitur libero sapien, mattis id neque sit amet, volutpat pharetra sem.</li>
+                                <li>Vivamus eleifend erat pellentesque neque aliquet, ac mollis tellus molestie. Ut semper purus magna, sit amet ullamcorper justo pharetra eget.</li>
+                                <li>Morbi pulvinar egestas pharetra. Vivamus laoreet est magna, vel suscipit augue condimentum a. Sed interdum tortor eget neque scelerisque, et rhoncus dui varius.</li>
+                            </ul>    
+                        </li>
+                    </ul>
+                    <ul class="row">
+                        <li><h6 class="text-start">01-2016 / 12-2017 - EmpresaC LTD.</h6>
+                            <ul>
+                                <li>Nunc nec lorem in velit faucibus vehicula. Donec elit dolor, sollicitudin a justo vitae, suscipit eleifend turpis. Curabitur molestie fringilla lobortis.</li>
+                                <li>Cras sed consectetur ex, vitae accumsan dui. Donec pellentesque urna ac fermentum malesuada. Cras imperdiet turpis justo, et semper neque laoreet non.</li>
+                                <li>Etiam lorem orci, volutpat euismod felis a, feugiat vestibulum augue. Curabitur leo est, ultricies vel facilisis ut, venenatis ut ex.</li>
+                            </ul>
+                        </li>
+                        <li><h6 class="text-start">01-2014 / 12-2015 - EmpresaD LTD.</h6>
+                            <ul>
+                                <li>Nunc tincidunt tortor vel dolor facilisis aliquam. Etiam magna risus, pharetra in sapien in, consequat egestas eros. Etiam porta facilisis justo, venenatis porttitor nibh porttitor eu.</li>
+                                <li>Sed ultricies vulputate eros, ac pellentesque diam vulputate quis. Aenean turpis velit, lobortis ut mi quis, convallis faucibus orci.</li>
+                                <li>ellentesque fermentum lorem dui, commodo tincidunt risus molestie at. Suspendisse vitae sem feugiat, iaculis nisl sit amet, convallis sapien.</li>
+                            </ul>    
+                        </li>
+                    </ul>
+                </div>
+
+                <!--El siguiente contenedor se mostrará al cliquear en "Educación"-->
+                <div id="estudios" class="container fondo-gris-claro">
+                    <div class="row">
+                        <h2 class="text-start">Estudios Realizados</h2>
+                    </div>
+                    <ul class="row">
+                        <li><h6 class="text-start">01-2016 / 12-2016 - Academia Online "Tal"</h6>
+                            <ul><h6 class="text-start">Maestria en Progrmación</h6>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum. Nam ac neque tristique, tincidunt nisl nec, consectetur sem.</li>
+                                <li>Sed placerat lorem urna, sit amet ullamcorper ligula commodo a. Donec aliquet arcu a felis dapibus cursus. Sed commodo efficitur nunc semper rutrum. Aenean a dui nisl.</li>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus. Aenean iaculis eros nisl, sit amet faucibus leo placerat ac.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="row"><br></div>
+                    <ul class="row">
+                        <li><h6 class="text-start">01-2010 / 12-2015 - Universidad de Ingeniería "Tal Otra"</h6>
+                            <ul><h6 class="text-start">Ingeniero en Sistemas de la Información</h6>
+                                <li>Maecenas volutpat nibh vitae enim volutpat, id bibendum nulla viverra. Curabitur libero sapien, mattis id neque sit amet, volutpat pharetra sem.</li>
+                                <li>Vivamus eleifend erat pellentesque neque aliquet, ac mollis tellus molestie. Ut semper purus magna, sit amet ullamcorper justo pharetra eget.</li>
+                                <li>Morbi pulvinar egestas pharetra. Vivamus laoreet est magna, vel suscipit augue condimentum a. Sed interdum tortor eget neque scelerisque, et rhoncus dui varius.</li>
+                            </ul>    
+                        </li>
+                    </ul>
+                    <div class="row"><br></div>
+                    <ul class="row">
+                        <li><h6 class="text-start">01-2004 / 12-2009 - Escuela Secuandaria "Esta Otra"</h6>
+                            <ul><h6 class="text-start"></h6>Técnico en Electrónica</h6>
+                                <li>Nunc nec lorem in velit faucibus vehicula. Donec elit dolor, sollicitudin a justo vitae, suscipit eleifend turpis. Curabitur molestie fringilla lobortis.</li>
+                                <li>Cras sed consectetur ex, vitae accumsan dui. Donec pellentesque urna ac fermentum malesuada. Cras imperdiet turpis justo, et semper neque laoreet non.</li>
+                                <li>Etiam lorem orci, volutpat euismod felis a, feugiat vestibulum augue. Curabitur leo est, ultricies vel facilisis ut, venenatis ut ex.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--El siguiente contenedor se mostrará al cliquear en "Otra Info"-->
+                <div id="otraInfo2" class="container fondo-gris-claro">
+                    <div class="row">
+                        <h2 class="text-start">Detalles Adicionales</h2>
+                    </div>
+                    <ul class="row">
+                        <li><h6 class="text-start">Idiomas</h6>
+                            <ul><h6 class="text-start">Ingles</h6>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum.</li>
+                            </ul>
+                            <ul><h6 class="text-start">Alemán</h6>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="row">
+                        <li><h6 class="text-start">Otros Conocimientos</h6>
+                            <ul><h6 class="text-start">Conocimiento A</h6>
+                                <li>Sed placerat lorem urna, sit amet ullamcorper ligula commodo a. Donec aliquet arcu a felis dapibus cursus.</li>
+                            </ul>
+                            <ul><h6 class="text-start">Conocimiento B</h6>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus.</li>
+                            </ul>    
+                        </li>
+                    </ul><div class="row"><br></div>
+                    <ul class="row">
+                        <li><h6 class="text-start">Hobbies</h6>
+                            <ul><h6 class="text-start">Hobbie A</h6>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum.</li>
+                            </ul>
+                            <ul><h6 class="text-start">Hobbie B</h6>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="row">
+                        <li><h6 class="text-start">Referencias</h6>
+                            <ul><h6 class="text-start">Ing. Fulano Perez</h6>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut massa vitae nisl fringilla auctor vel ut ipsum.</li>
+                            </ul>
+                            <ul><h6 class="text-start">Sr. Mengano Gomez</h6>
+                                <li>Nunc et mollis magna. Vivamus sapien mauris, euismod ut tincidunt quis, sagittis id risus.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!--Pie de página con datos de la persona ficticia-->
+    <footer class="container py-3 my-4 bg-dark text-white">
+        <p class="text-center">Datos de Contacto:</p>
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li><p id="direccionPie" class="px-2"></p></li>
+          <li><p id="ciudadPie" class="px-2"></p></li>
+          <li><a id="telefonoPie" class="px-2"></a></li>
+          <li><a id="celularPie" class="px-2"></a></li>
+          <li><a id="emailPie" class="px-2"></a></li>
+        </ul>
+        <p class="text-center">Realizado por: Alejandro Greco, 2023.</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
