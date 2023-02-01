@@ -10,8 +10,7 @@ const botonEducacion = document.getElementById("botonEducacion");
 const botonOtraInfo = document.getElementById("botonOtraInfo");
 const botonRandom = document.getElementById("botonRandom");
 
-/*Definimos clases constantes para modificar el aspecto
-de los botones de la barra de navegación*/
+/*Definimos clases constantes para modificar el aspecto de los botones de la barra de navegación*/
 const resaltarBoton = "btn btn-primary btn-lg w-100";
 const atenuarBoton = "btn btn-light btn-lg w-100";
 
@@ -21,8 +20,7 @@ const nombreHome = document.getElementById("nombreHome");
 const fotoHome = document.getElementById("fotoHome");
 const ocupacionHome = document.getElementById("ocupacionHome");
 
-/*Definimos las constantes para acceder por ID a la sección
-info y las distintas subsecciones que la conforman*/
+/*Definimos las constantes para acceder por ID a la sección info y las distintas subsecciones que la conforman*/
 const infoPage = document.getElementById("infoPage");
 const resumen = document.getElementById("resumen");
 const acercaDeMi = document.getElementById("acercaDeMi");
@@ -52,8 +50,10 @@ const celularAdm = document.getElementById("celularAdm");
 const emailAdm = document.getElementById("emailAdm");
 const experienciaAdm = document.getElementById("experienciaAdm");
 
-/*Definimos las constantes para acceder por ID a la subsección "Resumen"
-pero con los datos obtenidos aleatoriamente al clickear "Random!"*/
+/*********************************************************************
+Definimos las constantes para acceder por ID a la subsección "Resumen"
+pero con los datos obtenidos aleatoriamente al clickear "Random!"
+*********************************************************************/
 const pruebaConcepto = document.getElementById("pruebaConcepto");
 const textoPruebaConcepto = document.getElementById("textoPruebaConcepto");
 
@@ -67,12 +67,12 @@ const emailPie = document.getElementById("emailPie");
 /*************************************************************************************
 Al inicio, el botón resalto es el "Home". Guardamos este estado en una variable global,
 la cual utilizaremos como marcador para seguir el estado cual es el botón que se ha
-clickeado por última vez. Luego totamos la infomación por default del archivo json.
+clickeado por última vez. Luego totamos la infomación por default de un archivo json.
 *************************************************************************************/
 let botonResaltado = botonHome;
 tomarInfo(persona_default);
 
-/*A continuación se codifican las acciones que se realizan al clickear cada botón*/
+/*A continuación se codifican las acciones que se realizarán al clickear cada botón*/
 botonHome.onclick = function () {
   presentarInfo(botonHome, persona_default);
 }
@@ -100,14 +100,14 @@ botonRandom.onclick = function () {
 function presentarInfo(botonClickeado, origen) {
   console.log(`El usuario a clickeado el "${botonClickeado.id}"`);
   quitarElementos();
-  colocarElementos(botonClickeado);
   tomarInfo(origen);
+  colocarElementos(botonClickeado);
 }
 
-/*************************************************************
-La siguiente función oculta los elementos según sea el estado
-de la variable global "botonResaltado"
-*************************************************************/
+/*********************************************************
+La siguiente función oculta ciertos elementos según sea el
+estado de la variable global "botonResaltado"
+**********************************************************/
 function quitarElementos() {
   switch (botonResaltado) {
     case botonHome:
@@ -155,10 +155,10 @@ function quitarElementos() {
   }
 }
 
-/***************************************************************************
-La siguiente función muestra los elementos según sea el estado del parámetro
-pasado "botonClickeado" y cambia el estado de "botonResaltado".
-***************************************************************************/
+/*******************************************************************************
+La siguiente función muestra los elementos según el botón que se haya clickeado
+y guarda dicho botón como "variable de estado" en la global "botonResaltado".
+********************************************************************************/
 function colocarElementos(botonClickeado) {
   switch (botonClickeado) {
     case botonHome:
@@ -212,10 +212,10 @@ function colocarElementos(botonClickeado) {
   }
 }
 
-/*************************************************************
-Esta función inyecta los datos en los elemtos correspondientes
+/***********************************************************************
+La siguiente función inyecta los datos en los elementos correspondientes
 según el origen que se le pase como parámetro.
-**************************************************************/
+***********************************************************************/
 async function tomarInfo(origen) {
   await fetch(origen)
     .then(respuesta => respuesta.json())
