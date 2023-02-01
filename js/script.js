@@ -74,45 +74,34 @@ tomarInfo(persona_default);
 
 /*A continuación se codifican las acciones que se realizan al clickear cada botón*/
 botonHome.onclick = function () {
-  console.log('El usuario a clickeado el "botonHome"');
-  quitarElementos();
-  colocarElementos(botonHome);
-  tomarInfo(persona_default);
+  presentarInfo(botonHome, persona_default);
 }
 
 botonResumen.onclick = function () {
-  console.log('El usuario a clickeado el "botonResumen"');
-  quitarElementos();
-  colocarElementos(botonResumen);
-  tomarInfo(persona_default);
+  presentarInfo(botonResumen, persona_default);
 }
 
 botonExperiencia.onclick = function () {
-  console.log('El usuario a clickeado el "botonExperiencia"');
-  quitarElementos();
-  colocarElementos(botonExperiencia);
-  tomarInfo(persona_default);
+  presentarInfo(botonExperiencia, persona_default);
 }
 
 botonEducacion.onclick = function () {
-  console.log('El usuario a clickeado el "botonEducacion"');
-  quitarElementos();
-  colocarElementos(botonEducacion);
-  tomarInfo(persona_default);
+  presentarInfo(botonEducacion, persona_default);
 }
 
 botonOtraInfo.onclick = function () {
-  console.log('El usuario a clickeado el "botonOtraInfo"');
-  quitarElementos();
-  colocarElementos(botonOtraInfo);
-  tomarInfo(persona_default);
+  presentarInfo(botonOtraInfo, persona_default);
 }
 
 botonRandom.onclick = function () {
-  console.log('El usuario a clickeado el "botonRandom"');
+  presentarInfo(botonRandom, persona_random);
+}
+
+function presentarInfo(botonClickeado, origen) {
+  console.log(`El usuario a clickeado el "${botonClickeado.id}"`);
   quitarElementos();
-  colocarElementos(botonRandom);
-  tomarInfo(persona_random);
+  colocarElementos(botonClickeado);
+  tomarInfo(origen);
 }
 
 /*************************************************************
@@ -231,12 +220,11 @@ async function tomarInfo(origen) {
   await fetch(origen)
     .then(respuesta => respuesta.json())
     .then(json => {
-      /********************************************************************
-      Definimos una constante para guardar la respuesta y usamos la consola
-      para corroborar la recepción por si hay problemas de conexión.
-      *********************************************************************/
+      /*Confirmamos haber recibido la respuesta (para problemas de conexión)*/
+      console.log("Se recibió respuesta al tomar datos");
+      /*Definimos una constante para guardar la respuesta.*/
       const info = json.results[0];
-      console.log(info);
+      
 
       /*Guardamos los valores de las tag que necesitamos en distintas variables loacales*/
       let nombre = `${info.name.first} ${info.name.last}`;
