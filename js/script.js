@@ -91,18 +91,21 @@ botonExperiencia.onclick = function () {
   console.log('El usuario a clickeado el "botonExperiencia"');
   quitarElementos();
   colocarElementos(botonExperiencia);
+  tomarInfo(persona_default);
 }
 
 botonEducacion.onclick = function () {
   console.log('El usuario a clickeado el "botonEducacion"');
   quitarElementos();
   colocarElementos(botonEducacion);
+  tomarInfo(persona_default);
 }
 
 botonOtraInfo.onclick = function () {
   console.log('El usuario a clickeado el "botonOtraInfo"');
   quitarElementos();
   colocarElementos(botonOtraInfo);
+  tomarInfo(persona_default);
 }
 
 botonRandom.onclick = function () {
