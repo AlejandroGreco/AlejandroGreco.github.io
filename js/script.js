@@ -10,7 +10,10 @@ const botonEducacion = document.getElementById("botonEducacion");
 const botonOtraInfo = document.getElementById("botonOtraInfo");
 const botonRandom = document.getElementById("botonRandom");
 
-/*Definimos clases constantes para modificar el aspecto de los botones de la barra de navegación*/
+/*********************************************************
+Definimos strings constantes que moficarán el aspecto de
+los botones según cual sea el último que se ha cliqueado.
+*********************************************************/
 const resaltarBoton = "btn btn-primary btn-lg w-100";
 const atenuarBoton = "btn btn-light btn-lg w-100";
 
