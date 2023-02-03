@@ -1,8 +1,12 @@
-/*Definimos las constantes de donde se tomaran los datos de la persona*/
+/***********************************************************************
+ * Definimos las constantes de donde se tomaran los datos de la persona.
+ ***********************************************************************/
 const persona_default = 'js/default-info.json';
 const persona_random = 'https://randomuser.me/api/';
 
-/*Definimos las constantes para acceder a los botones por ID*/
+/*************************************************************
+ * Definimos las constantes para acceder a los botones por ID.
+ *************************************************************/
 const botonHome = document.getElementById("botonHome");
 const botonResumen = document.getElementById("botonResumen");
 const botonExperiencia = document.getElementById("botonExperiencia");
@@ -10,20 +14,30 @@ const botonEducacion = document.getElementById("botonEducacion");
 const botonOtraInfo = document.getElementById("botonOtraInfo");
 const botonRandom = document.getElementById("botonRandom");
 
-/*********************************************************
-Definimos strings constantes que moficarán el aspecto de
-los botones según cual sea el último que se ha cliqueado.
-*********************************************************/
+/***********************************************************
+ * Definimos strings constantes que moficarán el aspecto de
+ * los botones según cual sea el último que se ha cliqueado.
+ ***********************************************************/
 const resaltarBoton = "btn btn-primary btn-lg w-100";
 const atenuarBoton = "btn btn-light btn-lg w-100";
 
-/*Definimos las constantes para acceder por ID a la sección home*/
+/******************************************************************
+ * Definimos las constantes para acceder por ID a la sección "Home"
+ ******************************************************************/
 const homePage = document.getElementById("homePage");
 const nombreHome = document.getElementById("nombreHome");
 const fotoHome = document.getElementById("fotoHome");
 const ocupacionHome = document.getElementById("ocupacionHome");
 
-/*Definimos las constantes para acceder por ID a la sección info y las distintas subsecciones que la conforman*/
+/**********************************************************************************
+ * Definimos un array constante para que contenga los IDs de toda la sección "Home"
+ **********************************************************************************/
+const homeArray = [homePage, nombreHome, fotoHome, ocupacionHome];
+
+/***********************************************************
+ * Definimos las constantes para acceder por ID a la sección
+ * info y las distintassubsecciones que la conforman.
+ ***********************************************************/
 const infoPage = document.getElementById("infoPage");
 const resumen = document.getElementById("resumen");
 const acercaDeMi = document.getElementById("acercaDeMi");
@@ -34,7 +48,27 @@ const estudios = document.getElementById("estudios");
 const otraInfo1 = document.getElementById("otraInfo1");
 const otraInfo2 = document.getElementById("otraInfo2");
 
-/*Definimos las constantes para acceder por ID a la subsección "Detalles Profesionales"*/
+/***********************************************************
+ * Y a continuación definimos una serie de arrays constantes
+ * que engloban los IDs de cada subsección*
+ ***********************************************************/
+const resumenArray = [resumen, acercaDeMi, infoPage];
+const experienciaArray = [experiencia, trabajos, infoPage];
+const educacionArray = [educacion, estudios, infoPage];
+const otraInfoArray = [otraInfo1, otraInfo2, infoPage];
+
+/*************************************************************************************
+ * Definimos las constantes para acceder por ID a la subsección "Random!", que es como
+ * la subsección "Resumen" pero con datos obtenidos aleatoriamente de randomuser.me".
+ * Definimos tanbién el array de IDs correspondiente.
+ *************************************************************************************/
+const pruebaConcepto = document.getElementById("pruebaConcepto");
+const textoPruebaConcepto = document.getElementById("textoPruebaConcepto");
+const randomArray = [resumen, acercaDeMi, pruebaConcepto, textoPruebaConcepto, infoPage];
+
+/*****************************************************************************************************
+ * Definimos las constantes para acceder por ID a elementos de la subsección "Detalles Profesionales".
+ *****************************************************************************************************/
 const nombreDP = document.getElementById("nombreDP");
 const edadDP = document.getElementById("edadDP");
 const ubicacionDP = document.getElementById("ubicacionDP");
@@ -44,7 +78,9 @@ const emailDP = document.getElementById("emailDP");
 const fotoDP = document.getElementById("fotoDP");
 const experienciaDP = document.getElementById("experienciaDP");
 
-/*Definimos las constantes para acceder por ID a la subsección "Acerca de mi""*/
+/*******************************************************************************************
+ * Definimos las constantes para acceder por ID a elementos de la subsección "Acerca de mí".
+ *******************************************************************************************/
 const nombreAdm = document.getElementById("nombreAdm");
 const edadAdm = document.getElementById("edadAdm");
 const ubicacionAdm = document.getElementById("ubicacionAdm");
@@ -53,29 +89,26 @@ const celularAdm = document.getElementById("celularAdm");
 const emailAdm = document.getElementById("emailAdm");
 const experienciaAdm = document.getElementById("experienciaAdm");
 
-/*********************************************************************
-Definimos las constantes para acceder por ID a la subsección "Resumen"
-pero con los datos obtenidos aleatoriamente al clickear "Random!"
-*********************************************************************/
-const pruebaConcepto = document.getElementById("pruebaConcepto");
-const textoPruebaConcepto = document.getElementById("textoPruebaConcepto");
-
-/*Definimos las constantes para acceder por ID a la subsección Footer*/
+/***********************************************************************************
+ * Definimos las constantes para acceder por ID a elementos de la subsección Footer.
+ ***********************************************************************************/
 const direccionPie = document.getElementById("direccionPie");
 const ciudadPie = document.getElementById("ciudadPie");
 const telefonoPie = document.getElementById("telefonoPie");
 const celularPie = document.getElementById("celularPie");
 const emailPie = document.getElementById("emailPie");
 
-/*************************************************************************************
-Al inicio, el botón resalto es el "Home". Guardamos este estado en una variable global,
-la cual utilizaremos como marcador para seguir el estado cual es el botón que se ha
-clickeado por última vez. Luego totamos la infomación por default de un archivo json.
-*************************************************************************************/
+/*****************************************************************************************
+ * Al inicio, el botón resalto es el "Home". Guardamos este estado en una variable global,
+ * la cual utilizaremos como marcador para seguir el estado cual es el botón que se ha
+ * clickeado por última vez. Luego totamos la infomación por default de un archivo json.
+******************************************************************************************/
 let botonResaltado = botonHome;
 tomarInfo(persona_default);
 
-/*A continuación se codifican las acciones que se realizarán al clickear cada botón*/
+/************************************************************************************
+ * A continuación se codifican las acciones que se realizarán al clickear cada botón.
+ ************************************************************************************/
 botonHome.onclick = function () {
   presentarInfo(botonHome, persona_default);
 }
@@ -107,50 +140,29 @@ function presentarInfo(botonClickeado, origen) {
   colocarElementos(botonClickeado);
 }
 
-/*********************************************************
-La siguiente función oculta ciertos elementos según sea el
-estado de la variable global "botonResaltado"
-**********************************************************/
+/*******************************************************************************************
+ * La siguiente función oculta los elementos de la sección que esté "activa" en ese momento.
+ * Para ello hace uso del estado de la variable global "botonResaltado".
+********************************************************************************************/
 function quitarElementos() {
   switch (botonResaltado) {
     case botonHome:
-      botonHome.className = atenuarBoton;
-      nombreHome.style.display = "none";
-      fotoHome.style.display = "none";
-      ocupacionHome.style.display = "none";
-      homePage.style.display = "none";
+      cambiarElemento(botonHome, homeArray, false);
       break;
     case botonResumen:
-      botonResumen.className = atenuarBoton;
-      resumen.style.display = "none";
-      acercaDeMi.style.display = "none";
-      infoPage.style.display = "none";
+      cambiarElemento(botonResumen, resumenArray, false);
       break;
     case botonExperiencia:
-      botonExperiencia.className = atenuarBoton;
-      experiencia.style.display = "none";
-      trabajos.style.display = "none";
-      infoPage.style.display = "none";
+      cambiarElemento(botonExperiencia, experienciaArray, false);
       break;
     case botonEducacion:
-      botonEducacion.className = atenuarBoton;
-      educacion.style.display = "none";
-      estudios.style.display = "none";
-      infoPage.style.display = "none";
+      cambiarElemento(botonEducacion, educacionArray, false);
       break;
     case botonOtraInfo:
-      botonOtraInfo.className = atenuarBoton;
-      otraInfo1.style.display = "none";
-      otraInfo2.style.display = "none";
-      infoPage.style.display = "none";
+      cambiarElemento(botonOtraInfo, otraInfoArray, false);
       break;
     case botonRandom:
-      botonRandom.className = atenuarBoton;
-      resumen.style.display = "none";
-      pruebaConcepto.style.display = "none";
-      textoPruebaConcepto.style.display = "none";
-      acercaDeMi.style.display = "none";
-      infoPage.style.display = "none";
+      cambiarElemento(botonRandom, randomArray, false);
       break;
     default:
       console.log('error: La variable "botonResaltado" no contiene un valor valido!');
@@ -158,56 +170,28 @@ function quitarElementos() {
   }
 }
 
-/*******************************************************************************
-La siguiente función muestra los elementos según el botón que se haya clickeado
-y guarda dicho botón como "variable de estado" en la global "botonResaltado".
-********************************************************************************/
+/**********************************************************************************
+ * La siguiente función muestra los elementos según el botón que se haya clickeado.
+***********************************************************************************/
 function colocarElementos(botonClickeado) {
   switch (botonClickeado) {
     case botonHome:
-      botonHome.className = resaltarBoton;
-      homePage.style.display = "block";
-      nombreHome.style.display = "block";
-      fotoHome.style.display = "block";
-      ocupacionHome.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonHome, homeArray, true);
       break;
     case botonResumen:
-      botonResumen.className = resaltarBoton;
-      infoPage.style.display = "block";
-      resumen.style.display = "block";
-      acercaDeMi.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonResumen, resumenArray, true);
       break;
     case botonExperiencia:
-      botonExperiencia.className = resaltarBoton;
-      infoPage.style.display = "block";
-      experiencia.style.display = "block";
-      trabajos.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonExperiencia, experienciaArray, true);
       break;
     case botonEducacion:
-      botonEducacion.className = resaltarBoton;
-      infoPage.style.display = "block";
-      educacion.style.display = "block";
-      estudios.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonEducacion, educacionArray, true);
       break;
     case botonOtraInfo:
-      botonOtraInfo.className = resaltarBoton;
-      infoPage.style.display = "block";
-      otraInfo1.style.display = "block";
-      otraInfo2.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonOtraInfo, otraInfoArray, true);
       break;
     case botonRandom:
-      botonRandom.className = resaltarBoton;
-      infoPage.style.display = "block";
-      resumen.style.display = "block";
-      pruebaConcepto.style.display = "block";
-      textoPruebaConcepto.style.display = "block";
-      acercaDeMi.style.display = "block";
-      botonResaltado = botonClickeado;
+      cambiarElemento(botonRandom, randomArray, true);
       break;
     default:
       console.log('error: Se recibió un "botonClickeado" no valido!');
@@ -215,10 +199,25 @@ function colocarElementos(botonClickeado) {
   }
 }
 
-/***********************************************************************
-La siguiente función inyecta los datos en los elementos correspondientes
-según el origen que se le pase como parámetro.
-***********************************************************************/
+/**************************************************************************************************
+ * La siguente función cambia el estado de "unBoton" y "unArray" según "unEstado" sea true o false.
+ * A su vez, en el caso que sea true, establece "botonResaltado" a "resaltarBoton".
+ **************************************************************************************************/
+function cambiarElemento(unBoton, unArray, unEstado) {
+  if (unEstado) {
+    unBoton.className = resaltarBoton;
+    unArray.forEach(elemento => elemento.style.display = "block");
+    botonResaltado = unBoton;
+  } else {
+    unBoton.className = atenuarBoton;
+    unArray.forEach(elemento => elemento.style.display = "none");
+  }
+}
+
+/**************************************************************************
+ * La siguiente función inyecta los datos en los elementos correspondientes
+ * según el origen que se le pase como parámetro.
+***************************************************************************/
 async function tomarInfo(origen) {
   await fetch(origen)
     .then(respuesta => respuesta.json())
