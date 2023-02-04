@@ -15,8 +15,8 @@ const botonOtraInfo = document.getElementById("botonOtraInfo");
 const botonRandom = document.getElementById("botonRandom");
 
 /***********************************************************
- * Declaramos strings constantes que moficarán el aspecto de
- * los botones según cual sea el último que se ha cliqueado.
+ * Declaramos strings constantes que modificarán el aspecto de
+ * los botones según cual sea el último que se ha clickeado.
  ***********************************************************/
 const resaltarBoton = "btn btn-primary btn-lg w-100";
 const atenuarBoton = "btn btn-light btn-lg w-100";
@@ -60,7 +60,7 @@ const subseccionOtraInfoIdArray = [seccionInfo, otraInfoTitulo, otraInfoCuadro];
 /*************************************************************************************
  * Declaramos las constantes para acceder por ID a la subsección "Random!", que es como
  * la subsección "Resumen" pero con datos obtenidos aleatoriamente de randomuser.me".
- * Declaramos tanbién el array de IDs correspondiente.
+ * Declaramos también el array de IDs correspondiente.
  *************************************************************************************/
 const pruebaDeConceptoTitulo = document.getElementById("pruebaDeConceptoTitulo");
 const pruebaDeConceptoParrafo = document.getElementById("pruebaDeConceptoParrafo");
@@ -100,7 +100,7 @@ const emailPie = document.getElementById("emailPie");
 
 /**********************************************************************************
  * Declaramos una serie de arrays con los IDs de todos los elementos cuyo contenido
- * será el mismo, de modo que podamos asignar dicho contenido de menera recursiva.
+ * será el mismo, de modo que podamos asignar dicho contenido de manera recursiva.
  **********************************************************************************/
 const nombreIdArray = [nombreHome, nombreDP, nombreAdm];
 const edadIdArray = [edadDP, edadAdm];
@@ -114,7 +114,7 @@ const fotoIdArray = [fotoDP, fotoHome];
 /*****************************************************************************************
  * Al inicio, el botón resalto es el "Home". Guardamos este estado en una variable global,
  * la cual utilizaremos como marcador para seguir el estado cual es el botón que se ha
- * clickeado por última vez. Luego totamos la infomación por default de un archivo json.
+ * clickeado por última vez. Luego tomamos la información por default de un archivo json.
 ******************************************************************************************/
 let botonResaltado = botonHome;
 tomarInfo(persona_default);
@@ -210,10 +210,10 @@ async function tomarInfo(origen) {
         /**Declaramos una constante para guardar la respuesta.*/
         const infoRespuesta = json.results[0];
 
-        /*********************************************************
-         * Guardamos los valores de las estiquetas que necesitamos
-         * en distintas variables loacales.
-         * *******************************************************/
+        /********************************************************
+         * Guardamos los valores de las etiquetas que necesitamos
+         * en distintas variables locales.
+         * ******************************************************/
         let nombre = `${infoRespuesta.name.first} ${infoRespuesta.name.last}`;
         let direccion = `${infoRespuesta.location.street.name} ${infoRespuesta.location.street.number}`;
         let ubicacion = `${infoRespuesta.location.city}, ${infoRespuesta.location.state}, ${infoRespuesta.location.country} (C.P. ${infoRespuesta.location.postcode})`;
@@ -226,7 +226,7 @@ async function tomarInfo(origen) {
         
         /********************************************************************
          * Asignamos la información a los elementos correspondientes de forma
-         * recusiva con el uso de los arrays de IDs.
+         * recursiva con el uso de los arrays de IDs.
          * ******************************************************************/
         nombreIdArray.forEach(elemento => elemento.innerHTML = nombre);
         edadIdArray.forEach(elemento => elemento.innerHTML = `${edad} años`);

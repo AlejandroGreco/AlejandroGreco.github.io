@@ -3,7 +3,7 @@
     font-family: 'Lora', serif;
 }
 
-/**Definimos clases de estilo para algunos elemtos puntuales*/
+/**Definimos clases de estilo para algunos elementos puntuales*/
 .fondo-gris-claro {
     background-color: lightgray;
 }
@@ -13,7 +13,7 @@
 }
 
 /**********************************************************************
-* A continuación definimos los elemetos HTML que se mostrarán al inicio
+* A continuación definimos los elementos HTML que se mostrarán al inicio
 * y cuales se ocultarán para luego ser modificados por JavaScript.
  **********************************************************************/
 
