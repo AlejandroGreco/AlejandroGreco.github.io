@@ -1,9 +1,9 @@
-/*Aplicamos la fuente de google elegida a todo el texto*/
+/**Aplicamos la fuente de google elegida a todo el texto*/
 * {
     font-family: 'Lora', serif;
 }
 
-/*Definimos de clases de estilo para algunos elemtos puntuales*/
+/**Definimos clases de estilo para algunos elemtos puntuales*/
 .fondo-gris-claro {
     background-color: lightgray;
 }
@@ -12,19 +12,19 @@
     font-size: 12px;
 }
 
-/********************************************************************
-A continuación definimos los elemetos HTML que se mostraran al inicio
-y cuales se esconderan para luego ser modificados por JavaScript.
-********************************************************************/
+/**********************************************************************
+* A continuación definimos los elemetos HTML que se mostrarán al inicio
+* y cuales se ocultarán para luego ser modificados por JavaScript.
+ **********************************************************************/
 
-#nombreHome, #homePage,
+#nombreHome, #seccionHome,
 #fotoHome, #ocupacionHome {
     display: block;
 }
 
-#infoPage, #resumen, #acercaDeMi, #experiencia,
-#educacion, #otraInfo1, #trabajos,
-#estudios, #otraInfo2, #pruebaConcepto,
-#textoPruebaConcepto {
+#seccionInfo, #resumenTitulo, #acercaDeMiCuadro, #experienciaTitulo,
+#educacionTitulo, #otraInfoTitulo, #experienciaCuadro,
+#educacionCuadro, #otraInfoCuadro, #pruebaDeConceptoTitulo,
+#pruebaDeConceptoParrafo {
     display: none;
 }
