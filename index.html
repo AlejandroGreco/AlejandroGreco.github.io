@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>El Rincón del Chocolate</title>
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<header>
+			<img src="img/logo.png" class="logo" alt="nuestro_logo"/>
+			<h1><strong>El Rincón del Chocolate</strong></h1>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html" target="_blank">Inicio</a></li>
+				<li><a href="productos.html" target="_blank">Productos</a></li>
+				<li><a href="reseñas.html" target="_blank">Reseñas</a></li>
+				<li><a href="contacto.html" target="_blank">Contactos</a></li>
+			</ul>
+		</nav>
+		<main>
+			<section>
+				<p>¿Productos?</p>
+				<img src="img/producto01.jpg" class="img_producto" alt="producto01">
+				<video class="video_inicio" src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" alt="video_fabricación" controls autoplay loop muted preload></video>
+			</section>
+			<!-- Formularios -->
+			<form action="" method="POST">
+                <p>Póngase en contacto con nosotros:</p>
+                <label for="nombre">Nombre:
+                    <input id="nombre" name="nombre" type="text" placeholder="Escriba su nombre..."/>
+                </label>
+                <label for="apellido">:
+                    <input id="apellido" name="apellido" type="text" placeholder="Escriba su apellido..."/>
+                </label>
+                <label for="email">E-mail:
+                    <input id="email" name="email" type="email" placeholder="Escriba su e-mail..."/>
+                </label>
+                <label for="comentario">Envíenos sus comentarios:
+                    <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Ingrese sus comentarios..."></textarea>
+                </label>
+                <!--Botón de envío-->
+                <input type="submit" value="Enviar Datos">
+			</form>
+		</main>
+		<footer>
+            <p>Datos de Contacto</p>
+            <a href="mailto:info@ejemplo.com?subject=Contacto">Enviar correo</a>
+		</footer>
+	</body>
+</html>
