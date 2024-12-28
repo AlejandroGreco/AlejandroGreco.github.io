@@ -1,15 +1,130 @@
+/****************************
+* Configuraciones Iniciales *
+****************************/
+
+/* Importamos las fuentes embebidas de Google que vamos a utilizar */
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* Definimos variables globales para el uso de colores personalizados y de las fuentes importadas */
+:root {
+	/* Variables de Color */
+	--color-principal: #69247c;
+	--color-secundario: #da498d;
+	--color-resaltado: #ffc107;
+	--color-atenuado: #fac67a;
+	--color-fondo: #f9e6cf;
+	/* Variables de Fuente */
+	--playfair-display: "Playfair Display", serif;
+	--cookie-regular: "Cookie", serif;
+}
+
+/*************************
+* Estilos de Uso General *
+*************************/
+
 * {
-
+	font-family: var(--playfair-display);
+	font-weight: bold;
+	font-style: normal;
 }
 
-.logo {
-    width: 100px;
+/* Clase para dar aspecto estilizado tanto al <nav> como al <footer> */
+.cinta {
+	background-color: var(--color-principal);
+	color: var(--color-fondo);
+	padding: 15px;
+	margin: 5px;
 }
 
-.img_producto {
-    width: 200px;
+/* Damos un estilo moderno a los enlaces de la clase .cinta*/
+.cinta a {
+	text-decoration: none;
+	color: var(--color-fondo);
 }
 
-.video_inicio {
-    width: 200px;
+.cinta a:hover {
+	color: var(--color-resaltado);
 }
+
+.cinta a:active {
+	color: var(--color-secundario);
+}
+
+/* Estilos para el texto */
+.texto-centrado {
+	text-align: center;
+}
+
+/* Estilos imágenes */
+
+.img-producto {
+	width: 200px;
+}
+
+/* Estilos botones */
+.boton {
+	background-color: var(--color-resaltado);
+	color: var(--color-principal);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.boton:hover {
+	background-color: var(--color-atenuado);
+}
+
+/*****************
+* Estilos Cuerpo *
+*****************/
+body {
+	background-color: var(--color-fondo);
+	color: var(--color-principal);
+}
+
+/*************************
+* Estilos Sección Header *
+*************************/
+
+/* Usamos flexbox en el <nav> para acomodar el logo y los enlaces */
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Tamaño del logo que aparece en el <nav> */
+#logo-nav {
+	height: 40px;
+}
+
+/* Damos un estilo moderno a la lista de enlaces de navegación */
+.lista-nav {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 1.35rem;
+	gap: 2.1rem;
+	flex: 1;
+}
+
+/* Título de la Marca */
+#titulo-principal {
+	font-family: var(--cookie-regular);
+	font-weight: bold;
+	font-style: normal;
+	font-size: 3.5rem;
+}
+
+/*
+* AGREGAR SECCION
+*/
+#video-inicio {
+	width: 200px;
+}
+
+
+
