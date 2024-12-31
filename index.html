@@ -1,58 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
+
 	<!-- Cabecera del Documento -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
 		<!-- Título de la Página y Favicon-->
 		<title>El Rincón del Chocolate</title>
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
 		<!-- Archivo hoja de Estilos -->
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
+
 	<!-- Cuerpo del Documento -->
 	<body>
+
 		<!-- Encabezado de la Página-->
-		<header>
+		<header class="seccion">
+
 			<!-- Barra de Menu -->
 			<nav class="cinta">
 				<img id="logo-nav" src="img/logo.png" alt="nuestro_logo" />
-				<ul class="lista-nav">
-					<li><a href="#inicio">Inicio</a></li>
-					<li><a href="#productos">Productos</a></li>
-					<li><a href="#reseñas">Reseñas</a></li>
-					<li><a href="#contacto">Contacto</a></li>
+				<ul class="lista-nav texto-centrado">
+					<li><a href="#seccion-inicio">Inicio</a></li>
+					<li><a href="#seccion-productos">Productos</a></li>
+					<li><a href="#seccion-reseñas">Reseñas</a></li>
+					<li><a href="#seccion-contacto">Contacto</a></li>
 				</ul>
 			</nav>
+
 			<!-- Título Principal -->
-			<h1>
-				<strong id="titulo-principal">El Rincón del Chocolate</strong>
+			<h1 id="titulo-principal">
+				<strong>El Rincón del Chocolate</strong>
 			</h1>
-			<p>Bienvenidos a nuestra página de ventas....</p>
 		</header>
+
 		<!-- Sección Principal -->
-		<main>
-			<section id="inicio">
-				<img src="img/producto01.jpg" class="img-producto" alt="imagen-producto" />
-				<video id="video-inicio" poster="img/preview.jpg" alt="video-fabricación" controls autoplay loop muted preload>
-					<source src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" type="video/mp4" />
-					<track src="sub/subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default />
-					Tu navegador no soporta la reproducción de video.
-				</video>
+		<main class="seccion">
+
+			<!-- Subsección Inicio -->
+			<section id="seccion-inicio" class="subseccion">
+				<h2 class="titulo-secundario">"Dulces Momentos, Siempre"</h2>
+
+				<div class="tarjetas-resenas">
+					<div class="tarjeta-general tarjeta-resena">
+						<div class="contenedor-video">
+							<video id="video-inicio" poster="img/preview.jpg" alt="video-fabricación" loading="lazy" controls autoplay loop muted preload>
+								<source src="https://videos.pexels.com/video-files/7012967/7012967-hd_1080_1350_25fps.mp4" type="video/mp4" />
+								<track src="sub/subtitulos.vtt" kind="subtitles" srclang="es" label="Español" default />
+								Tu navegador no soporta la reproducción de video.
+							</video>
+						</div>
+						<div class="texto-resena">
+							<p id="parrafo-bienvenida">
+								Te damos la bienvenida a <em>El Rincón del Chocolate</em>. Aquí el chocolate es más que un postre: es un
+								momento especial. Nos encanta crear bombones y exquisiteces que endulcen tu día, ya sea que los disfrutes
+								en casa, con amigos o en nuestro local.<br>
+								¡Gracias por visitarnos y ser parte de esta experiencia!
+							</p>
+						</div>
+					</div>
+
+					<div class="tarjeta-general tarjeta-producto">
+						<div class="contenedor-img-producto">
+							<img src="img/imagen-producto00.jpg" alt="imagen-producto00" />
+						</div>
+						<div class="texto-producto">
+							<p>Promoción Producto</p>
+							<a href="#productos">Acceda a nuestra tienda online!</a>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section>
-				<h2>Otras secciones posibles</h2>
-				<p>¿Pagos?</p>
-				<p>¿Cómo llegar?</p>
+
+			<!-- Subsección Productos-->
+			<section id="seccion-productos" class="subseccion">
+				<h2 class="titulo-secundario">Nuestra Tienda Online</h2>
+				<p>Compra desde aquí y te lo enviamos a tu hogar!</p>
+
+				<!-- Contenedor de Tarjetas de Productos-->
+				<div class="tarjetas-productos">
+					<div class="tarjeta-general tarjeta-producto">
+						<div class="contenedor-img-producto">
+							<img src="img/imagen-producto01.jpg" alt="imagen-producto01" />
+						</div>
+						<div class="texto-producto">
+							<p>producto01</p>
+							<a href="#productos">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-producto">
+						<div class="contenedor-img-producto">
+							<img src="img/imagen-producto02.jpg" alt="imagen-producto02" />
+						</div>
+						<div class="texto-producto">
+							<p>producto02</p>
+							<a href="#productos">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-producto">
+						<div class="contenedor-img-producto">
+							<img src="img/imagen-producto03.jpg" alt="imagen-producto03" />
+						</div>
+						<div class="texto-producto">
+							<p>producto03</p>
+							<a href="#productos">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-producto">
+						<div class="contenedor-img-producto">
+							<img src="img/imagen-producto04.jpg" alt="imagen-producto04" />
+						</div>
+						<div class="texto-producto">
+							<p>producto04</p>
+							<a href="#productos">Ver más info</a>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section id="productos">
-				<p>Acá van los Productos</p>
+
+			<!-- Subsección Reseñas -->
+			<section id="seccion-reseñas" class="subseccion">
+				<h2 class="titulo-secundario">Reseñas</h2>
+				<p>Aquí algunos de los comentario de nuestros clientes...</p>
+
+				<!-- Contenedor de Tarjetas de Reseñas-->
+				<div class="tarjetas-resenas">
+					<div class="tarjeta-general tarjeta-resena">
+						<div class="contenedor-img-resena">
+							<img src="img/imagen-resena01.jpg" alt="imagen-resena01" />
+						</div>
+						<div class="texto-resena">
+							<p>resena01</p>
+							<a href="">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-resena">
+						<div class="contenedor-img-resena">
+							<img src="img/imagen-resena02.jpg" alt="imagen-resena02" />
+						</div>
+						<div class="texto-resena">
+							<p>resena02</p>
+							<a href="">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-resena">
+						<div class="contenedor-img-resena">
+							<img src="img/imagen-resena03.jpg" alt="imagen-resena03" />
+						</div>
+						<div class="texto-resena">
+							<p>resena03</p>
+							<a href="">Ver más info</a>
+						</div>
+					</div>
+					<div class="tarjeta-general tarjeta-resena">
+						<div class="contenedor-img-resena">
+							<img src="img/imagen-resena04.jpg" alt="imagen-resena04" />
+						</div>
+						<div class="texto-resena">
+							<p>resena04</p>
+							<a href="">Ver más info</a>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section id="reseñas">
-				<p>Acá van las Reseñas</p>
-			</section>
-			<section id="contacto">
+			
+			<!-- Subsección Contactos-->
+			<section id="seccion-contacto" class="subseccion">
+				<h2 class="titulo-secundario">Contáctenos!</h2>
+				<p>Su opinión nos ayuda a mejorar. Déjenos sus comentarios</p>
+
 				<!-- Formulario de Contacto -->
 				<form action="https://formspree.io/f/xovqrzyw" method="POST" target="_blank">
 					<fieldset>
@@ -87,9 +207,13 @@
 				</form>
 			</section>
 		</main>
-		<footer class="cinta texto-centrado">
-			<address>Acá van los datos de Contacto</address>
-			<a href="mailto:info@ejemplo.com?subject=Contacto">Enviar correo</a>
+
+		<!-- Sección Footer-->
+		<footer class="seccion texto-centrado ">
+			<div class="cinta">
+				<address>Acá van los datos de Contacto</address>
+				<a href="mailto:info@ejemplo.com?subject=Contacto">Enviar correo</a>
+			</div>
 		</footer>
 	</body>
 </html>
